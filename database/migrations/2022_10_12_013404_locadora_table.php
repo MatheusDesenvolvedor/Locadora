@@ -13,12 +13,12 @@ class LocadoraTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function(Blueprint $table){
+        Schema::create('locadora', function (Blueprint $table) {
             $table->id();
-            $table->text('title')->nullable();
-            $table->date('created_at');
+            $table->string('titulo');
+            $table->string('name', 50);
             $table->timestamps();
-        })
+        });
     }
 
     /**
@@ -28,6 +28,6 @@ class LocadoraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('locadora');
     }
 }
